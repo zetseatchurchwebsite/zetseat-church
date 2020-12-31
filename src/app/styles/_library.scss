@@ -1,0 +1,310 @@
+@import './theme';
+
+::selection {
+  background: $accent;
+}
+
+html,
+body {
+  font-family: $fontFam-body;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+body {
+  background-color: $bg;
+}
+
+article {
+  font-family: $fontFam-article;
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 2;
+  text-align: justify;
+
+  color: transparentize($fg, 0.28);
+
+  @media (max-width: $mobile) {
+    font-size: 1rem;
+    line-height: 1.75;
+  }
+}
+
+.h0,
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6,
+.title {
+  display: block;
+
+  margin: 0;
+  padding: 1.5rem 0 0.5rem;
+
+  font-family: $fontFam-heading;
+  font-weight: 800;
+
+  color: transparentize($fg, 0.14);
+}
+.h0 {
+  font-size: 2.5rem;
+
+  @media (max-width: $mobile) {
+    font-size: 2.25rem;
+  }
+}
+h1,
+.h1 {
+  font-size: 2rem;
+}
+h2,
+.h2 {
+  font-size: 1.75rem;
+}
+h3,
+.h3 {
+  font-size: 1.5rem;
+}
+h4,
+.h4 {
+  font-size: 1.25rem;
+}
+h5,
+.h5 {
+  font-size: 1rem;
+}
+h6,
+.h6 {
+  font-size: 0.75rem;
+}
+
+.subtitle {
+  font-weight: 300;
+
+  @extend .fg-blackish;
+}
+.h0,
+h1,
+.h1,
+h2,
+.h2 {
+  .subtitle {
+    display: block;
+
+    margin: 0.25rem 0 0;
+
+    font-size: 0.5rem;
+  }
+}
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  .subtitle {
+    font-size: 0.75rem;
+  }
+}
+
+hr {
+  height: 1px;
+
+  opacity: 0.7;
+}
+
+a {
+  @extend .gerami-anchor;
+
+  font-weight: 700;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.audio-container {
+  overflow: hidden;
+
+  audio[controls] {
+    display: block;
+    visibility: visible;
+
+    width: 100%;
+  }
+}
+
+.gerami-input,
+.gerami-textarea,
+.gerami-input-placeholder,
+.gerami-textarea-placeholder,
+.gerami-input-label,
+.gerami-textarea-label {
+  margin: auto 0;
+  padding: ($space / 1.4) 0 0;
+
+  border-radius: $radius;
+}
+.gerami-input,
+.gerami-textarea {
+  padding: ($space * 1.4 / 2) ($space);
+
+  border: 0;
+
+  background-color: transparentize($bg, 0.14);
+  box-shadow: $shade-S;
+
+  &:active,
+  &:focus,
+  &:hover {
+    margin: auto 0;
+
+    border-bottom-color: $accent;
+
+    background-color: transparentize($bg, 0.05);
+    box-shadow: $shade-S, $shade-M, $shade-L;
+  }
+}
+.gerami-textarea {
+  border-radius: $radius;
+}
+.gerami-input-placeholder,
+.gerami-textarea-placeholder {
+  padding: ($space * 1.4 / 2) ($space);
+}
+.gerami-input-placeholder:empty,
+.gerami-textarea-placeholder:empty {
+  display: none !important;
+}
+.gerami-input-float,
+.gerami-textarea-float {
+  margin-left: $space - ($space / 2);
+  padding: ($space / 4) ($space / 2);
+
+  font-weight: 700;
+
+  background-color: transparentize($primary, 0.05);
+
+  box-shadow: $shade-S;
+  color: transparentize($bg, 0.05);
+}
+
+.gerami-button {
+  margin: auto 0 0;
+  padding: ($space / 1.4 - $border + 1) ($space * 1.4);
+
+  background-color: transparent !important;
+  color: inherit !important;
+}
+.gerami-button-primary {
+  border-width: $border;
+
+  text-shadow: $text-shade-S;
+
+  border-color: transparent !important;
+
+  background-color: $primary !important;
+  color: $bg !important;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten($primary, 3%) !important;
+  }
+}
+
+.gerami-input[type='search'] {
+  padding-right: 35px;
+}
+.search-icon {
+  position: absolute;
+
+  margin: 25px 0 0 -30px;
+
+  font-size: $font-L;
+
+  background-color: $bg;
+  color: transparentize($fg, 0.42);
+}
+
+.cards-negation {
+  margin: (-$space / 4) (-$space / 4) 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.hide-on-mobile {
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}
+
+.video-series-iframe {
+  display: block !important;
+
+  height: 674px !important;
+
+  @media (max-width: $mobile * 2) {
+    height: 480px !important;
+  }
+
+  @media (max-width: $mobile * 1.66) {
+    height: 420px !important;
+  }
+
+  @media (max-width: $mobile * 1.33) {
+    height: 360px !important;
+  }
+
+  @media (max-width: $mobile) {
+    height: 320px !important;
+  }
+
+  @media (max-width: $mobile * 0.8) {
+    height: 240px !important;
+  }
+}
+
+// 'gatsby-remark-autolink-headers':
+.autolink-headers {
+  padding-right: $space / 2 !important;
+
+  box-shadow: none !important;
+
+  @media (max-width: $mobile) {
+    padding-right: $space / 8 !important;
+  }
+}
+
+// 'gatsby-plugin-scroll-reveal':
+[data-sal] {
+  --sal-duration: 0.3s;
+  --sal-easing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+// todo: fix this in gerami v0.1.7 and remove this temp patch
+.gerami-accordion-container {
+  .gerami-modal-img {
+    background-size: cover;
+
+    transition-timing-function: ease-in-out;
+    transition-duration: 0.3s;
+  }
+}
+
+// 'gerami':
+.bg-whitish {
+  background-color: transparentize(darken($bg, 7%), 0.56) !important;
+}

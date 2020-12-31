@@ -1,0 +1,40 @@
+@import '../../../../../app/styles/theme';
+
+.home-quad-links {
+  padding: ($space * 2) 0;
+}
+
+.home-quad-links-link-container {
+  display: inline-block;
+  vertical-align: top;
+
+  padding: $space;
+
+  width: 50%;
+
+  @media (max-width: $mobile) {
+    width: 100%;
+  }
+}
+
+.home-quad-links-link {
+  width: 100%;
+
+  box-shadow: none !important;
+
+  transform: scale3d(1, 1, 1);
+
+  transition: all 0.3s ease-in-out;
+
+  &:active,
+  &:focus,
+  &:hover {
+    transform: $poke;
+  }
+
+  h3 {
+    padding: ($space / 2) 0;
+
+    text-align: center;
+  }
+}

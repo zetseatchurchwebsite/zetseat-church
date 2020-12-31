@@ -1,0 +1,19 @@
+@import '../../../../../app/styles/theme';
+
+.home-events-event-date {
+  @media (max-width: $mobile) {
+    padding-top: $space !important;
+  }
+}
+
+.home-events-event-content {
+  padding: ($space / 2) 0 0 !important;
+
+  text-align: left;
+
+  @media (max-width: $mobile) {
+    padding: 0 !important;
+
+    text-align: center;
+  }
+}

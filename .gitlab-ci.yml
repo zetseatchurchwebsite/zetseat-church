@@ -1,0 +1,22 @@
+image: node:12
+
+cache:
+  paths:
+    - node_modules/
+
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  interruptible: true
+  environment:
+    name: production
+    url: https://zetset.netlify.com
+  only:
+    - master
+  before_script:
+    - yarn install
+  script:
+    - yarn build
+    - yarn deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_AUTH_TOKEN

@@ -1,0 +1,107 @@
+@import '../../../../../app/styles/theme';
+@import './header-height';
+
+
+.header {
+  position: sticky;
+  z-index: 14;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: transparentize($bg, 0.07);
+  background-image: linear-gradient(
+    to top right,
+    transparentize($bg, 0.28),
+    transparentize($bg, 0.14),
+    transparentize($bg, 0.42)
+  );
+  box-shadow: $shade-M, 0 -5px 15px -5px transparentize($fg, 0.84);
+
+  @media (max-width: $mobile) {
+    position: fixed;
+
+    top: initial;
+    bottom: 0;
+  }
+}
+
+.header-transparent {
+  @media (min-width: $mobile) {
+    margin-bottom: -($headerVerticalSpace * 2 + $headerInnerHeight);
+
+    &,
+    .header-title,
+    .header-logo,
+    .nav-l-link-active,
+    .nav-l-separator {
+      transition: all 0.3s;
+    }
+  }
+}
+
+.header-transparent-active {
+  @media (min-width: $mobile) {
+    background: transparent none !important;
+    box-shadow: none !important;
+
+    .header-title,
+    .header-logo,
+    .nav-l-link-active,
+    .nav-l-separator {
+      filter: invert(1);
+    }
+  }
+}
+
+.header-space {
+  padding: $headerVerticalSpace $space;
+
+  @media (max-width: $mobile) {
+    padding: (0) ($space / 2);
+  }
+
+  a {
+    text-decoration: none !important;
+
+    box-shadow: none !important;
+  }
+}
+
+.header-logo {
+  display: inline-block;
+  vertical-align: middle;
+
+  margin: 0 $space 0 0;
+
+  width: auto;
+  height: $headerInnerHeight !important;
+
+  @media (max-width: $mobile) {
+    margin-right: $space / 2;
+  }
+}
+
+.header-title {
+  display: inline-block;
+  vertical-align: middle;
+
+  margin: 0;
+  padding: ($space / 2) 0 0;
+
+  font-size: ($headerInnerHeight / 2) - ($space / 1.4);
+  line-height: (($headerInnerHeight - 1) / 2) - ($space / 1.4) / 2;
+  text-transform: uppercase;
+
+  > span {
+    font-weight: 300;
+  }
+}
+
+.header-left,
+.header-flex-spacer {
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}

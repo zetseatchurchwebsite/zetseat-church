@@ -1,0 +1,26 @@
+@import '../../../app/styles/theme';
+
+.event-card {
+  width: 100%;
+
+  border-radius: $radius;
+
+  box-shadow: $shade-M;
+
+  transition: all 0.3s;
+
+  &:focus,
+  &:hover {
+    box-shadow: $shade-S, $shade-M, $shade-L;
+  }
+
+  &:active {
+    box-shadow: $shade-S;
+  }
+}
+
+.event-card-block {
+  border-radius: $radius;
+
+  transition: all 0.3s;
+}

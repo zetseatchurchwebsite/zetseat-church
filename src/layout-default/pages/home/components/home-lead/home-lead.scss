@@ -1,0 +1,14 @@
+@import '../../../../../app/styles/theme';
+
+.home-lead {
+  text-shadow: $text-shade-S, $text-shade-M, $text-shade-L;
+}
+
+.home-lead-overlay {
+  background-color: transparentize(lighten($fg, 3%), 0.42);
+  background-image: linear-gradient(
+    70deg,
+    transparent,
+    transparentize(darken($primary, 49%), 0.42)
+  );
+}

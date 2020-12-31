@@ -1,0 +1,320 @@
+@import '../../../../../app/styles/theme';
+@import '../header/header-height';
+$switchThreshold: $mobile * 2;
+.nav {
+  .nav-l-container {
+    display: initial;
+  }
+  .nav-s-container {
+    display: none;
+  }
+
+ 
+
+  @media (max-width: $switchThreshold) {
+    .nav-l-container {
+      display: none !important;
+    }
+    .nav-s-container {
+      display: initial;
+    }
+  }
+
+  @media (max-width: $mobile) {
+    flex: 1;
+  }
+}
+
+//
+// nav-l:
+//
+
+.nav-l {
+  display: flex;
+
+  height: $headerInnerHeight;
+
+  > * {
+    vertical-align: middle;
+
+    margin: auto;
+  }
+}
+
+.nav-l-link {
+  padding: 0 1rem;
+  height: $headerInnerHeight;
+
+  font-size: 0.84rem;
+  line-height: $headerInnerHeight;
+  text-transform: uppercase;
+}
+.nav-l-link-active {
+  color: transparentize($fg, 0.42) !important;
+}
+
+.nav-l-separator {
+  padding: 0 0.5rem 4px;
+
+  font-size: $space;
+  font-weight: 300;
+
+  opacity: 0.14;
+}
+
+//
+// nav-s:
+//
+
+@keyframes NavSUnderlayAnimation {
+  0% {
+    background-color: transparentize(lighten($fg, 70%), 0.42);
+  }
+  100% {
+  }
+}
+
+@keyframes NavSContentAnimation {
+  0% {
+    filter: opacity(0);
+    transform: translate3d(0, 84vh, 0) scale3d(0.42, 0.42, 0.42);
+  }
+  100% {
+    filter: opacity(1);
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+}
+
+@keyframes NavSLinkTabActiveIconAnimation {
+  0% {
+    color: $primary;
+
+    filter: opacity(1);
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+  }
+  100% {
+  }
+}
+
+@keyframes NavSLinkTabActiveNameAnimation {
+  0% {
+    color: $primary;
+
+    filter: opacity(0);
+    transform: translate3d(0, $headerInnerHeight, 0) scale3d(0.84, 0.84, 0.84);
+  }
+  100% {
+  }
+}
+
+.nav-s {
+  @extend .nav-l;
+
+  display: flex;
+}
+.nav-s-foreigners{
+  display: flex;
+}
+
+.nav-s-link-tab {
+  display: none;
+  flex: 1;
+  overflow: hidden;
+
+  text-align: center;
+
+  @media (max-width: $mobile) {
+    display: inline-block;
+  }
+}
+
+.nav-s-link-tab-icon,
+.nav-s-link-tab-name {
+  display: block;
+  flex: 1;
+
+  margin: 0;
+  padding: 0;
+
+  height: $headerInnerHeight;
+
+  text-transform: uppercase;
+
+  animation-duration: 0.3s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.3, 0.7, 0, 1);
+}
+
+.nav-s-link-tab-icon {
+  font-size: $font-L;
+  line-height: $headerInnerHeight + $space / 2;
+
+  filter: opacity(1);
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+}
+
+.nav-s-link-tab-name {
+  margin-top: -$headerInnerHeight;
+
+  font-size: $font-S;
+  line-height: $headerInnerHeight;
+
+  filter: opacity(0);
+  transform: translate3d(0, $headerInnerHeight / 4, 0) scale3d(0.84, 0.84, 0.84);
+}
+
+.nav-s-link-tab-active {
+  color: transparentize($fg, 0.42) !important;
+
+  .nav-s-link-tab-icon {
+    filter: opacity(0);
+    transform: translate3d(0, -$headerInnerHeight / 4, 0)
+      scale3d(0.84, 0.84, 0.84);
+
+    animation-name: NavSLinkTabActiveIconAnimation;
+    animation-duration: 0.7s;
+  }
+  .nav-s-link-tab-name {
+    filter: opacity(1);
+    transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+
+    animation-name: NavSLinkTabActiveNameAnimation;
+    animation-duration: 0.3s;
+  }
+}
+
+.nav-s-toggle {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  width: $headerInnerHeight;
+  height: $headerInnerHeight;
+
+  border: 0;
+  outline: 0 !important;
+
+  font-size: $font-L !important;
+  line-height: $headerInnerHeight + $space / 2;
+  text-transform: uppercase;
+
+  color: $primary !important;
+  box-shadow: none !important;
+
+  @media (max-width: $mobile) {
+    flex: 1;
+
+    width: initial;
+  }
+}
+
+.nav-s-underlay {
+  position: fixed;
+  z-index: 999;
+
+  margin: 0;
+  padding: $space * 2;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
+  overflow-y: auto;
+
+  background-color: transparentize(lighten($fg, 70%), 0.14);
+
+  transform: scale3d(1, 1, 1);
+
+  animation-name: NavSUnderlayAnimation;
+  animation-duration: 0.3s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.1, 0.9);
+
+  h6 {
+    color: inherit;
+
+    text-transform: uppercase;
+  }
+}
+
+.nav-s-overlay-closer {
+  position: fixed;
+  z-index: -1;
+
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+}
+
+.nav-s-overlay-content {
+  padding: $space;
+
+  border-radius: $radius;
+
+  background-color: transparentize($bg, 0.05);
+  box-shadow: $shade-L, $shade-S;
+
+  transform: scale3d(1, 1, 1);
+
+  animation-name: NavSContentAnimation;
+  animation-duration: 0.3s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.3, 0.7, 0, 1);
+}
+
+.nav-s-close-button {
+  margin: ($space * -1.4) ($space * -2) ($space * -1) (0);
+  padding: $space * 2;
+
+  font-size: $font-M;
+
+  border: 0 !important;
+  outline: 0 !important;
+
+  background: transparent !important;
+  box-shadow: none !important;
+
+  color: transparentize($fg, 0.42) !important;
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $primary !important;
+  }
+}
+
+.nav-s-link {
+  display: block;
+  
+  flex: 1;
+  
+  padding: ($space) 0 ($space / 4);
+
+  text-transform: uppercase;
+
+  .font-S {
+    font-size: 0.8em !important;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: transparentize($accent, 0.91);
+    box-shadow: inset 0 -1.07rem 0 -1rem $accent !important;
+    color: transparentize($fg, 0.28);
+  }
+}
+
+.nav-s-separator {
+  margin: 0 !important;
+}

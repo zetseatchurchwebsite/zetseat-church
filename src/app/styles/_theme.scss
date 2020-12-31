@@ -1,0 +1,30 @@
+@import '~gerami/src/styles/theme';
+
+$border: 2px;
+$radius: $space / 4;
+
+$primary: #d4af37;
+$accent: #ffd700;
+
+$shade-S: 0 5px 15px -5px transparentize(black, 0.84);
+$shade-M: 0 10px 35px -15px transparentize(black, 0.78);
+$shade-L: 0 15px 70px -35px transparentize(black, 0.74);
+
+$inset-shade-S: inset 0 5px 15px transparentize(black, 0.84);
+$inset-shade-M: inset 0 10px 35px transparentize(black, 0.78);
+$inset-shade-L: inset 0 15px 70px transparentize(black, 0.74);
+
+$shy: opacity(0.91) drop-shadow(0 1px 3px transparentize(black, 0.91));
+
+$touch: scale3d(0.998, 0.998, 1);
+$poke: scale3d(1.014, 1.014, 1.014);
+
+// FONTS:
+
+$fontFam-heading: Gilroy, 'Nokia Pure Headline', sans-serif;
+$fontFam-body: CircularStd, 'Nokia Pure Text', sans-serif;
+$fontFam-article: Merriweather, 'Nokia Pure Text', serif;
+
+// CUSTOM:
+
+$radius-large: 5px;

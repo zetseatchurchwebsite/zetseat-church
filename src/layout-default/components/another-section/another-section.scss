@@ -1,0 +1,9 @@
+@import '../../../app/styles/theme';
+
+.another-section-overlay {
+  background-color: transparentize(lighten($fg, 14%), 0.14);
+
+  * {
+    color: inherit !important;
+  }
+}

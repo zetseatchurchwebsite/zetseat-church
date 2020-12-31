@@ -1,0 +1,81 @@
+@import '../../../../../app/styles/theme';
+
+@keyframes PreHeaderAnimation {
+  0% {
+    margin-top: -42vh;
+
+    filter: opacity(0);
+  }
+  100% {
+    margin-top: 0;
+
+    filter: opacity(1);
+  }
+}
+
+@keyframes PreHeaderBgAnimation {
+  0% {
+    background-color: $primary;
+  }
+  100% {
+    background-color: $accent;
+  }
+}
+
+.pre-header {
+  transform: scale3d(1, 1, 1);
+
+  animation-name: PreHeaderAnimation;
+  animation-duration: 1s;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.1, 0.9);
+}
+
+.pre-header-bg {
+  background-image: linear-gradient(
+    to top right,
+    transparentize($bg, 0.56),
+    transparentize($bg, 0.42),
+    transparentize($bg, 0.84)
+  );
+  color: $bg;
+
+  transform: scale3d(1, 1, 1);
+
+  animation-name: PreHeaderBgAnimation;
+  animation-duration: 3s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in;
+
+  @media (max-width: $mobile) {
+    box-shadow: $inset-shade-L, $inset-shade-M, $inset-shade-S;
+  }
+}
+
+.pre-header-logo {
+  display: inline-block;
+
+  margin-top: $space * 4;
+
+  filter: drop-shadow($text-shade-S);
+}
+
+.pre-header-content {
+  display: flex;
+
+  .left {
+    padding-left: $space;
+  }
+
+  @media (max-width: $mobile) {
+    display: block;
+
+    .left {
+      padding-left: 0;
+
+      text-align: center !important;
+    }
+  }
+}

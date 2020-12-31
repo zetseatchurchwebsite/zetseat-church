@@ -1,0 +1,942 @@
+backend:
+  name: git-gateway
+  branch: master
+  commit_messages:
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
+# publish_mode: editorial_workflow
+
+media_folder: 'data/_uploads'
+public_folder: '../_uploads'
+
+collections:
+  - name: 'blog'
+    label: 'Blog'
+    folder: 'data/blog'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}-{{hour}}{{minute}}{{second}}'
+    preview_path: 'blog/{{year}}-{{month}}-{{day}}-{{slug}}-{{hour}}{{minute}}{{second}}'
+    editor:
+      preview: false
+    fields:
+      - {
+          label: 'Template',
+          name: 'template',
+          widget: 'hidden',
+          default: 'blog-post',
+        }
+      - { label: 'Post Image', name: 'thumbnail', widget: 'image' }
+      - {
+          label: 'Featured?',
+          name: 'isFeatured',
+          widget: 'boolean',
+          default: false,
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - {
+          label: 'Authors (separate by comma)',
+          name: 'authors',
+          widget: 'list',
+          default: ['Zetseat Church'],
+        }
+      - {
+          label: 'Tags (separate by comma)',
+          name: 'tags',
+          widget: 'list',
+          default: ['General'],
+        }
+      - { label: 'Article', name: 'body', widget: 'markdown' }
+
+  - name: 'podcasts'
+    label: 'Podcasts'
+    folder: 'data/podcasts'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}-{{hour}}{{minute}}{{second}}'
+    preview_path: 'podcasts/{{year}}-{{month}}-{{day}}-{{slug}}-{{hour}}{{minute}}{{second}}'
+    editor:
+      preview: false
+    fields:
+      - {
+          label: 'Template',
+          name: 'template',
+          widget: 'hidden',
+          default: 'podcast',
+        }
+      - { label: 'Post Image', name: 'thumbnail', widget: 'image' }
+      - {
+          label: 'Featured?',
+          name: 'isFeatured',
+          widget: 'boolean',
+          default: false,
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - {
+          label: 'Credits (separate by comma)',
+          name: 'authors',
+          widget: 'list',
+          default: ['Zetseat Church'],
+        }
+      - { label: 'Audio Attachment', name: 'audio', widget: 'file' }
+      - {
+          label: 'Tags (separate by comma)',
+          name: 'tags',
+          widget: 'list',
+          default: ['General'],
+        }
+      - {
+          label: 'Description',
+          name: 'body',
+          widget: 'markdown',
+          required: false,
+        }
+  - name: 'videos'
+    label: 'Videos'
+    folder: 'data/videos'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}-{{hour}}{{minute}}{{second}}'
+    preview_path: 'videos/{{year}}-{{month}}-{{day}}-{{slug}}-{{hour}}{{minute}}{{second}}'
+    editor:
+      preview: false
+    fields:
+      - {
+          label: 'Template',
+          name: 'template',
+          widget: 'hidden',
+          default: 'video-series',
+        }
+      - { label: 'Post Image', name: 'thumbnail', widget: 'image' }
+      - {
+          label: 'Featured?',
+          name: 'isFeatured',
+          widget: 'boolean',
+          default: false,
+        }
+      - { label: 'Series Title', name: 'title', widget: 'string' }
+      - label: 'Episodes'
+        name: 'episodes'
+        widget: 'list'
+        field: { label: 'YouTube Video ID', name: 'youtube', widget: 'youtube' }
+      - {
+          label: 'Description',
+          name: 'body',
+          widget: 'markdown',
+          required: false,
+        }
+
+  - name: 'events'
+    label: 'Events'
+    folder: 'data/events'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}-{{hour}}{{minute}}{{second}}'
+    preview_path: 'events/{{year}}-{{month}}-{{day}}-{{slug}}-{{hour}}{{minute}}{{second}}'
+    editor:
+      preview: false
+    fields:
+      - {
+          label: 'Template',
+          name: 'template',
+          widget: 'hidden',
+          default: 'event',
+        }
+      - {
+          label: 'Featured?',
+          name: 'isFeatured',
+          widget: 'boolean',
+          default: true,
+        }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Happens On', name: 'happensOn', widget: 'datetime' }
+      - {
+          label: 'Location',
+          name: 'location',
+          widget: 'string',
+          default: 'Zetseat Church',
+        }
+      - {
+          label: 'Description',
+          name: 'body',
+          widget: 'markdown',
+          required: false,
+        }
+
+  - name: 'info'
+    label: 'Information'
+    editor:
+      preview: false
+    files:
+      - file: 'data/info/general.md'
+        label: 'General Info'
+        name: 'general-info'
+        fields:
+          - { label: 'Motto', name: 'motto', widget: 'string' }
+          - label: 'Social Links'
+            name: 'social'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Facebook URL',
+                  name: 'facebook',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+              - {
+                  label: 'Instagram URL',
+                  name: 'instagram',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+              - {
+                  label: 'Telegram URL',
+                  name: 'telegram',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+              - {
+                  label: 'Twitter URL',
+                  name: 'twitter',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+              - {
+                  label: 'YouTube URL',
+                  name: 'youtube',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+          - { label: 'Address', name: 'address', widget: 'text' }
+          - { label: 'Address Map URL', name: 'addressUrl', widget: 'string' }
+          - { label: 'Mail', name: 'mail', widget: 'text' }
+          - label: 'Phones'
+            name: 'phones'
+            widget: 'list'
+            field: { label: 'Phone Number', name: 'string', widget: 'string' }
+          - label: 'Emails'
+            name: 'emails'
+            widget: 'list'
+            field: { label: 'Email Address', name: 'string', widget: 'string' }
+
+      - file: 'data/info/home-page.md'
+        label: 'Home Page'
+        name: 'home-page'
+        fields:
+          - label: 'Lead (Home)'
+            name: 'lead'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - { label: 'Background', name: 'bg', widget: 'image' }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - {
+                  label: 'Description',
+                  name: 'description',
+                  widget: 'markdown',
+                  buttons: ['bold', 'italic', 'code', 'link'],
+                  required: false,
+                  default: '',
+                }
+              - {
+                  label: 'CTA Button Text',
+                  name: 'btnText',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+              - {
+                  label: 'CTA Button URL',
+                  name: 'btnUrl',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+          - label: 'About (Home)'
+            name: 'about'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - {
+                  label: 'Description',
+                  name: 'description',
+                  widget: 'markdown',
+                  buttons:
+                    [
+                      'bold',
+                      'italic',
+                      'code',
+                      'link',
+                      'heading-four',
+                      'heading-five',
+                      'heading-six',
+                      'quote',
+                      'bulleted-list',
+                      'numbered-list',
+                    ],
+                }
+              - {
+                  label: 'CTA Button Text',
+                  name: 'btnText',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+              - {
+                  label: 'CTA Button URL',
+                  name: 'btnUrl',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+          - label: Foreign Links (Home)
+            name: foreignLinks
+            widget: object
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - { label: 'Shop Title', name: 'shopTitle', widget: 'string' }
+              - {
+                  label: 'Shop Description',
+                  name: 'shopDescription',
+                  widget: 'markdown',
+                  buttons:
+                    [
+                      'bold',
+                      'italic',
+                      'code',
+                      'link',
+                      'heading-four',
+                      'heading-five',
+                      'heading-six',
+                      'quote',
+                      'bulleted-list',
+                      'numbered-list',
+                    ],
+                }
+              - {
+                  label: 'Shop Button Text',
+                  name: 'shopBtnText',
+                  widget: 'string',
+                  default: 'Shop Now',
+                }
+              - {
+                  label: 'Shop Button URL',
+                  name: 'shopBtnUrl',
+                  widget: 'string',
+                  default: 'https://shop.zetseat.church/',
+                }
+              - {
+                  label: 'Live TV Title',
+                  name: 'liveTvTitle',
+                  widget: 'string',
+                }
+              - {
+                  label: 'Live TV Description',
+                  name: 'liveTvDescription',
+                  widget: 'markdown',
+                  buttons:
+                    [
+                      'bold',
+                      'italic',
+                      'code',
+                      'link',
+                      'heading-four',
+                      'heading-five',
+                      'heading-six',
+                      'quote',
+                      'bulleted-list',
+                      'numbered-list',
+                    ],
+                }
+              - {
+                  label: 'Live TV Button Text',
+                  name: 'liveTvBtnText',
+                  widget: 'string',
+                  default: 'Watch Live TV',
+                }
+              - {
+                  label: 'Live TV Button URL',
+                  name: 'liveTvBtnUrl',
+                  widget: 'string',
+                  default: 'https://live.zetseat.church/',
+                }
+          - label: 'Quad Links (Home)'
+            name: 'quadLinks'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - {
+                  label: 'Top Left Cover Image',
+                  name: 'topLeftCover',
+                  widget: 'image',
+                }
+              - { label: 'Top Left URL', name: 'topLeftUrl', widget: 'string' }
+              - {
+                  label: 'Top Left Title',
+                  name: 'topLeftTitle',
+                  widget: 'string',
+                }
+              - {
+                  label: 'Top Right Cover Image',
+                  name: 'topRightCover',
+                  widget: 'image',
+                }
+              - {
+                  label: 'Top Right URL',
+                  name: 'topRightUrl',
+                  widget: 'string',
+                }
+              - {
+                  label: 'Top Right Title',
+                  name: 'topRightTitle',
+                  widget: 'string',
+                }
+              - {
+                  label: 'Bottom Left Cover Image',
+                  name: 'bottomLeftCover',
+                  widget: 'image',
+                }
+              - {
+                  label: 'Bottom Left Title',
+                  name: 'bottomLeftTitle',
+                  widget: 'string',
+                }
+              - {
+                  label: 'Bottom Left Description',
+                  name: 'bottomLeftDescription',
+                  widget: 'markdown',
+                }
+              - {
+                  label: 'Bottom Right Cover Image',
+                  name: 'bottomRightCover',
+                  widget: 'image',
+                }
+              - {
+                  label: 'Bottom Right Title',
+                  name: 'bottomRightTitle',
+                  widget: 'string',
+                }
+              - {
+                  label: 'Bottom Right Description',
+                  name: 'bottomRightDescription',
+                  widget: 'markdown',
+                }
+          - label: 'Events (Home)'
+            name: 'events'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - {
+                  label: 'Max List',
+                  name: 'maxList',
+                  widget: 'number',
+                  default: 3,
+                  valueType: 'int',
+                  min: 1,
+                }
+          - label: 'Media (Home)'
+            name: 'media'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - {
+                  label: 'Blog Enabled?',
+                  name: 'isBlogEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - {
+                  label: 'Podcasts Enabled?',
+                  name: 'isPodcastsEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - {
+                  label: 'Videos Enabled?',
+                  name: 'isVideosEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+
+      - file: 'data/info/about-page.md'
+        label: 'About Page'
+        name: 'about-page'
+        fields:
+          - label: 'Lead (About)'
+            name: 'lead'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - { label: 'Background', name: 'bg', widget: 'image' }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - {
+                  label: 'Description',
+                  name: 'description',
+                  widget: 'markdown',
+                  buttons: ['bold', 'italic', 'code', 'link'],
+                  required: false,
+                  default: '',
+                }
+          - label: 'History (About)'
+            name: 'history'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - {
+                  label: 'Description',
+                  name: 'description',
+                  widget: 'markdown',
+                  buttons:
+                    [
+                      'bold',
+                      'italic',
+                      'code',
+                      'link',
+                      'heading-four',
+                      'heading-five',
+                      'heading-six',
+                      'quote',
+                      'bulleted-list',
+                      'numbered-list',
+                    ],
+                }
+          - label: 'Values (About)'
+            name: 'values'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+          - label: 'Strategic Areas (About)'
+            name: 'strategicAreas'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - {
+                  label: 'Description',
+                  name: 'description',
+                  widget: 'markdown',
+                  buttons:
+                    [
+                      'bold',
+                      'italic',
+                      'code',
+                      'link',
+                      'heading-four',
+                      'heading-five',
+                      'heading-six',
+                      'quote',
+                      'bulleted-list',
+                      'numbered-list',
+                    ],
+                }
+          - label: 'Statement of Faith (About)'
+            name: 'statementOfFaith'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - {
+                  label: 'Description',
+                  name: 'description',
+                  widget: 'markdown',
+                  buttons:
+                    [
+                      'bold',
+                      'italic',
+                      'code',
+                      'link',
+                      'heading-four',
+                      'heading-five',
+                      'heading-six',
+                      'quote',
+                      'bulleted-list',
+                      'numbered-list',
+                    ],
+                }
+              - { label: 'Attachment', name: 'attachment', widget: 'file' }
+          - label: 'Leadership (About)'
+            name: 'leadership'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - label: 'Leaders'
+                name: 'leaders'
+                widget: 'list'
+                fields:
+                  - { label: 'Photo', name: 'photo', widget: 'image' }
+                  - { label: 'Name', name: 'name', widget: 'string' }
+                  - { label: 'Role', name: 'role', widget: 'string' }
+
+      - file: 'data/info/youth-page.md'
+        label: 'Youth Page'
+        name: 'youth-page'
+        fields:
+          - label: 'Lead (Youth)'
+            name: 'lead'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - { label: 'Background', name: 'bg', widget: 'image' }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - {
+                  label: 'Description',
+                  name: 'description',
+                  widget: 'markdown',
+                  buttons: ['bold', 'italic', 'code', 'link'],
+                  required: false,
+                  default: '',
+                }
+          - label: 'Schools (Youth)'
+            name: 'schools'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - label: 'schools'
+                name: 'schools'
+                widget: 'list'
+                fields:
+                  - { label: 'Title', name: 'Title', widget: 'string' }
+                  - {
+                      label: 'Description',
+                      name: 'Description',
+                      widget: 'markdown',
+                      buttons:
+                        [
+                          'bold',
+                          'italic',
+                          'code',
+                          'link',
+                          'heading-four',
+                          'heading-five',
+                          'heading-six',
+                          'quote',
+                          'bulleted-list',
+                          'numbered-list',
+                        ],
+                    }
+
+          - label: 'Events (Youth)'
+            name: 'events'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - {
+                  label: 'Event 1 Title',
+                  name: 'event1Title',
+                  widget: 'string',
+                }
+              - {
+                  label: 'Event 1 Description',
+                  name: 'event1Description',
+                  widget: 'markdown',
+                  buttons:
+                    [
+                      'bold',
+                      'italic',
+                      'code',
+                      'link',
+                      'heading-four',
+                      'heading-five',
+                      'heading-six',
+                      'quote',
+                      'bulleted-list',
+                      'numbered-list',
+                    ],
+                }
+              - {
+                  label: 'Event 1 Button Text',
+                  name: 'event1BtnText',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+              - {
+                  label: 'Event 1 Button URL',
+                  name: 'event1BtnUrl',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+              - {
+                  label: 'Event 2 Title',
+                  name: 'event2Title',
+                  widget: 'string',
+                }
+              - {
+                  label: 'Event 2 Description',
+                  name: 'event2Description',
+                  widget: 'markdown',
+                  buttons:
+                    [
+                      'bold',
+                      'italic',
+                      'code',
+                      'link',
+                      'heading-four',
+                      'heading-five',
+                      'heading-six',
+                      'quote',
+                      'bulleted-list',
+                      'numbered-list',
+                    ],
+                }
+              - {
+                  label: 'Event 2 Button Text',
+                  name: 'event2BtnText',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+              - {
+                  label: 'Event 2 Button URL',
+                  name: 'event2BtnUrl',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+              - {
+                  label: 'Event 3 Title',
+                  name: 'event3Title',
+                  widget: 'string',
+                }
+              - {
+                  label: 'Event 3 Description',
+                  name: 'event3Description',
+                  widget: 'markdown',
+                  buttons:
+                    [
+                      'bold',
+                      'italic',
+                      'code',
+                      'link',
+                      'heading-four',
+                      'heading-five',
+                      'heading-six',
+                      'quote',
+                      'bulleted-list',
+                      'numbered-list',
+                    ],
+                }
+              - {
+                  label: 'Event 3 Button Text',
+                  name: 'event3BtnText',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+              - {
+                  label: 'Event 3 Button URL',
+                  name: 'event3BtnUrl',
+                  widget: 'string',
+                  required: false,
+                  default: '',
+                }
+          - label: 'Other Sections (Youth)'
+            name: 'otherSections'
+            widget: 'list'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - {
+                  label: 'Background Image',
+                  name: 'bg',
+                  widget: 'image',
+                  required: false,
+                }
+              - label: 'Content Alignment'
+                name: 'align'
+                widget: 'select'
+                multiple: false
+                options:
+                  - { label: 'Center', value: 'center' }
+                  - { label: 'Left', value: 'left' }
+                  - { label: 'Right', value: 'right' }
+                default: 'center'
+              - {
+                  label: 'Title',
+                  name: 'title',
+                  widget: 'string',
+                  required: false,
+                }
+              - {
+                  label: 'Description',
+                  name: 'description',
+                  widget: 'markdown',
+                  required: false,
+                }
+              - {
+                  label: 'Button Text',
+                  name: 'btnText',
+                  widget: 'string',
+                  required: false,
+                }
+              - {
+                  label: 'Button URL',
+                  name: 'btnUrl',
+                  widget: 'string',
+                  required: false,
+                }
+
+      - file: 'data/info/kids-page.md'
+        label: 'Kids Page'
+        name: 'kids-page'
+        fields:
+          - label: 'Lead (Kids)'
+            name: 'lead'
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - { label: 'Background', name: 'bg', widget: 'image' }
+              - { label: 'Title', name: 'title', widget: 'string' }
+              - {
+                  label: 'Description',
+                  name: 'description',
+                  widget: 'markdown',
+                  buttons: ['bold', 'italic', 'code', 'link'],
+                  required: false,
+                  default: '',
+                }
+          # TODO ???
+          - label: 'Other Sections (Kids)'
+            name: 'otherSections'
+            widget: 'list'
+            fields:
+              - {
+                  label: 'Section Enabled?',
+                  name: 'isEnabled',
+                  widget: 'boolean',
+                  default: true,
+                }
+              - {
+                  label: 'Background Image',
+                  name: 'bg',
+                  widget: 'image',
+                  required: false,
+                }
+              - label: 'Content Alignment'
+                name: 'align'
+                widget: 'select'
+                multiple: false
+                options:
+                  - { label: 'Center', value: 'center' }
+                  - { label: 'Left', value: 'left' }
+                  - { label: 'Right', value: 'right' }
+                default: 'center'
+              - {
+                  label: 'Title',
+                  name: 'title',
+                  widget: 'string',
+                  required: false,
+                }
+              - {
+                  label: 'Description',
+                  name: 'description',
+                  widget: 'markdown',
+                  required: false,
+                }
+              - {
+                  label: 'Button Text',
+                  name: 'btnText',
+                  widget: 'string',
+                  required: false,
+                }
+              - {
+                  label: 'Button URL',
+                  name: 'btnUrl',
+                  widget: 'string',
+                  required: false,
+                }
