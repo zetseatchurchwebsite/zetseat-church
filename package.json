@@ -103,7 +103,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format && yarn build && yarn test && git update-index --again"
+      "pre-commit": "yarn format && yarn test && git update-index --again"
     }
   },
   "prettier": {

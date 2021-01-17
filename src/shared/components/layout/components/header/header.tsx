@@ -35,11 +35,11 @@ const Header: React.FC<HeaderProps> = ({ transparentHeader }) => {
                 className="header-logo"
                 fixed={data.file?.childImageSharp?.fixed as any}
               />
-              <h1 className="header-title">
+              {/* <h1 className="header-title">
                 {lang`header-name-1`} {lang`header-name-2`}
                 <br />
                 {lang`header-name-3`} {lang`header-name-4`}
-              </h1>
+              </h1> */}
             </Flex>
           </Anchor>
 
