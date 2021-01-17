@@ -31,7 +31,7 @@
     "deploy": "netlify deploy --prod"
   },
   "resolutions": {
-    "**/netlify-cms-lib-util": "git+https://github.com/kaleabmelkie/netlify-cms-lib-util.git" 
+    "**/netlify-cms-lib-util": "git+https://github.com/kaleabmelkie/netlify-cms-lib-util.git"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.32",
@@ -87,7 +87,7 @@
     "moment": "2.29.1",
     "netlify-cli": "latest",
     "netlify-cms-app": "2.13.3",
-    "netlify-cms-lib-util": "git+https://github.com/kaleabmelkie/netlify-cms-lib-util.git", 
+    "netlify-cms-lib-util": "git+https://github.com/kaleabmelkie/netlify-cms-lib-util.git",
     "node-sass": "4.14.1",
     "prettier": "2.1.2",
     "react": "17.0.1",
