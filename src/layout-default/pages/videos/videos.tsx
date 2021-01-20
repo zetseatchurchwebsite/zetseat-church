@@ -31,7 +31,7 @@ const Videos: React.FC<VideosProps> = () => {
     data.otherVideos.edges.map((edge) => edge.node),
     term.length ? results : undefined
   )
-
+  console.log('data')
   return (
     <>
       <SEO title="Videos" />

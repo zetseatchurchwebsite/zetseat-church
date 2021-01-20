@@ -141,7 +141,7 @@ module.exports = {
                 description
               }
             }
-            logo: file(relativePath: { eq: "images/shared/icon.png" }) {
+            logo: file(relativePath: { eq: "images/shared/logoEng.png" }) {
               childImageSharp {
                 fixed(width: 3000, height: 3000, cropFocus: CENTER, quality: 90) {
                   src

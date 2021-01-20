@@ -25,6 +25,20 @@ const AboutValues: React.FC<AboutValuesProps> = () => {
       </Block>
 
       <Block>
+        <Content transparent size="XL" className="right">
+          <Block first>
+            <h1 className="padding-top-normal fg-blackish">{lang`about.mission.title`}</h1>
+          </Block>
+          <Block last className="font-L">
+            {lang`about.mission.description`}
+          </Block>
+        </Content>
+      </Block>
+
+      <Block last>
+        <Block first>
+          <h1 className="padding-top-normal fg-blackish">{lang`about.core.title`}</h1>
+        </Block>
         <Content transparent size="3XL">
           <Yoga maxCol={5} className="margin-vertical-none center">
             <Content style={{ height: '210px' }}>
@@ -87,17 +101,6 @@ const AboutValues: React.FC<AboutValuesProps> = () => {
               </Block>
             </Content>
           </Yoga>
-        </Content>
-      </Block>
-
-      <Block last>
-        <Content transparent size="XL" className="right">
-          <Block first>
-            <h1 className="padding-top-normal fg-blackish">{lang`about.mission.title`}</h1>
-          </Block>
-          <Block last className="font-L">
-            {lang`about.mission.description`}
-          </Block>
         </Content>
       </Block>
     </div>

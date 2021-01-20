@@ -31,15 +31,26 @@ const Header: React.FC<HeaderProps> = ({ transparentHeader }) => {
         <Flex>
           <Anchor to="/" className="margin-auto">
             <Flex className="header-left">
-              <GatsbyImage
+              {lang`header-name-1` === 'Zetseat' ? (
+                <GatsbyImage
+                  className="header-logo"
+                  fixed={data.file?.childImageSharp?.fixed as any}
+                />
+              ) : (
+                <GatsbyImage
+                  className="header-logo"
+                  fixed={data.file?.childImageSharp?.fixed as any}
+                />
+              )}
+              {/* <GatsbyImage
                 className="header-logo"
                 fixed={data.file?.childImageSharp?.fixed as any}
-              />
-              <h1 className="header-title">
+              /> */}
+              {/* <h1 className="header-title">
                 {lang`header-name-1`} {lang`header-name-2`}
                 <br />
                 {lang`header-name-3`} {lang`header-name-4`}
-              </h1>
+              </h1> */}
             </Flex>
           </Anchor>
 
@@ -56,7 +67,7 @@ export default Header
 
 export const query = graphql`
   query Header {
-    file(relativePath: { eq: "images/shared/logo.png" }) {
+    file(relativePath: { eq: "images/shared/logoEng.png" }) {
       childImageSharp {
         fixed(height: 56, quality: 90) {
           ...GatsbyImageSharpFixed_withWebp
