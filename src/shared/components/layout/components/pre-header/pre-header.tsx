@@ -44,7 +44,7 @@ export default PreHeader
 
 export const query = graphql`
   query PreHeader {
-    logo: file(relativePath: { eq: "images/shared/logoEng.pngg" }) {
+    logo: file(relativePath: { eq: "images/shared/logoEng.png" }) {
       childImageSharp {
         fixed(height: 140, quality: 90) {
           ...GatsbyImageSharpFixed_withWebp

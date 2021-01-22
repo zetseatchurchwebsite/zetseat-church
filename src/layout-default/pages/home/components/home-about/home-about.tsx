@@ -3,11 +3,13 @@ import { Block, Content, Yoga } from 'gerami'
 import Markdown from 'markdown-to-jsx'
 import { FaRegLightbulb } from 'react-icons/fa'
 import { IoMdCalendar } from 'react-icons/io'
-
 import { HomeQuery } from '../../../../../../graphql-types'
 import Anchor from '../../../../../shared/components/anchor/anchor'
 import { FormattedMessage } from 'gatsby-plugin-intl'
 import useLang from '../../../../../shared/hooks/lang/use-lang'
+import { graphql, useStaticQuery } from 'gatsby'
+import { HomeAboutQuery } from '../../../../../../graphql-types'
+
 type HomeAboutProps = Exclude<
   Exclude<HomeQuery['homePageInfo'], null | undefined>['frontmatter'],
   null | undefined
@@ -35,9 +37,19 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
   btnText,
   btnUrl,
 }) => {
+  const data = useStaticQuery<HomeAboutQuery>(query)
+
   const lang = useLang()
   return (
-    <div className="padding-vertical-very-big">
+    <div
+      className="padding-vertical-very-big"
+      style={{
+        backgroundSize: '960px auto',
+        backgroundPosition: 'bottom right',
+        backgroundRepeat: 'no-repeat',
+        backgroundImage: `url(${data.homebg?.childImageSharp?.fluid?.src})`,
+      }}
+    >
       <Content
         transparent
         size="3XL"
@@ -116,3 +128,14 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
 }
 
 export default HomeAbout
+export const query = graphql`
+  query HomeAbout {
+    homebg: file(relativePath: { eq: "images/shared/homebg.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`

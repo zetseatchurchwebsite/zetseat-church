@@ -307,7 +307,7 @@ module.exports = {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         htmlTitle: `Zetseat Church | Content Management`,
-        htmlFavicon: `${__dirname}/src/assets/images/shared/icon.png`,
+        htmlFavicon: `${__dirname}/src/assets/images/shared/logoEng.png`,
         modulePath: `${__dirname}/src/app/cms/cms.js`,
       },
     },
