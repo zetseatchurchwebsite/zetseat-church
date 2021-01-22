@@ -34,7 +34,7 @@ const YouthEvents: React.FC<YouthEventsProps> = ({ events }) => {
                     <Markdown>{e.description!}</Markdown>
                   </Block>
                 </h3>
-                {!(e.btnText && e.btnText) ? null : (
+                {/* {!(e.btnText && e.btnText) ? null : (
                   <Block last className="padding-top-none">
                     <Anchor
                       to={e.btnUrl}
@@ -43,7 +43,7 @@ const YouthEvents: React.FC<YouthEventsProps> = ({ events }) => {
                       <span className="inline-block middle">{e.btnText}</span>
                     </Anchor>
                   </Block>
-                )}
+                )} */}
               </Content>
             ))}
           </Yoga>
