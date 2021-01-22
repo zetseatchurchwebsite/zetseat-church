@@ -36,7 +36,7 @@ const HomeLead: React.FC<HomeLeadProps> = ({
               className="right margin-vertical-very-big padding-vertical-very-big"
             >
               <Block first last={!(description || (btnText && btnUrl))}>
-                <h1 className="h0 fg-accent">{lang`home.lead.title`}</h1>
+                <h1 className="h0 fg-primary">{lang`home.lead.title`}</h1>
               </Block>
 
               <Block last={!(btnText && btnUrl)}>
