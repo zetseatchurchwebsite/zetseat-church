@@ -101,7 +101,7 @@ const VideoSeries = ({ location, data }: VideoProps) => {
                     <FaArrowLeft />
                   </small>
                   <span className="inline-block margin-left-normal">
-                    {lang`vidoes`}
+                    {lang`videos`}
                   </span>
                 </Anchor>
               </span>

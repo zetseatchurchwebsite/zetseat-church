@@ -42,9 +42,9 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({
         <span className="blog-post-card-overlay-label">Read Article</span>
       </div>
       <div className="padding-horizontal-big">
-        <h5 className="blog-post-card-title">
+        <h4 className="blog-post-card-title">
           {title} <span className="subtitle font-M"> — {date}</span>
-        </h5>
+        </h4>
         <div className="blog-post-card-excerpt fg-black">{excerpt}</div>
       </div>
     </Anchor>

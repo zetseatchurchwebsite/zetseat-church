@@ -82,7 +82,7 @@ const Youth: React.FC<YouthProps> = () => {
           title={lang`youth.summercampus.title`}
           description={lang`youth.summercampus.description`}
           btnText={lang`youth.summercampus.btn`}
-          btnUrl={'/events'}
+          // btnUrl={'/events'}
           bg={data?.summerCampBG}
         />
 
@@ -106,7 +106,7 @@ const Youth: React.FC<YouthProps> = () => {
         <AnotherSection
           title={lang`youth.ays.title`}
           description={lang`youth.ays.description`}
-          btnUrl={'/events'}
+          btnUrl={'https://ays.international/'}
           btnText={lang`youth.ays.btn`}
         />
         <EmailRegistration />

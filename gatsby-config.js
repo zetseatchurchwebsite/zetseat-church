@@ -307,7 +307,7 @@ module.exports = {
       resolve: `gatsby-plugin-netlify-cms`,
       options: {
         htmlTitle: `Zetseat Church | Content Management`,
-        htmlFavicon: `${__dirname}/src/assets/images/shared/logoEng.png`,
+        htmlFavicon: `${__dirname}/src/assets/images/shared/Zetseat_Logo.png`,
         modulePath: `${__dirname}/src/app/cms/cms.js`,
       },
     },
@@ -403,7 +403,7 @@ module.exports = {
         description: `Official Website of Zetseat Apostolic Reformation Church (https://zetseat.church/).`,
         lang: `en`,
         display: `standalone`,
-        icon: `src/assets/images/shared/icon.png`,
+        icon: `src/assets/images/shared/Zetseat_Logo.png`,
         start_url: `/`,
         background_color: `#ffd700`,
         theme_color: `#d4af37`,

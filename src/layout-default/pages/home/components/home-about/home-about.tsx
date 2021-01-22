@@ -88,7 +88,7 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
               <Block className="padding-vertical-none">
                 <Content className="shade-S">
                   <Block first last>
-                    <h4 className="padding-none fg-black">{lang`home.about.schedule.title`}</h4>
+                    <h3 className="padding-none fg-black">{lang`home.about.schedule.title`}</h3>
                   </Block>
 
                   {schedules.map((schedule, i) => (
