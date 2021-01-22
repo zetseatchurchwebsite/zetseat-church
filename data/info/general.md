@@ -14,7 +14,7 @@ mail: P.O. Box 9315
 phones:
   - +251 1113690465
   - "+251113692046"
-  - +251 9043131
+  - +251 904313131
 emails:
   - zetseatchurch@gmail.com
 ---
