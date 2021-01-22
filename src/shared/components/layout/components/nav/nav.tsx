@@ -185,7 +185,7 @@ export const NavS: React.FC<NavSProps> = ({
                     {nav.icon}
                   </span>
                   <h6
-                    className="padding-top-small font-S light fg-black"
+                    className="padding-top-small font-S light fg-blackish"
                     style={{ textTransform: `none` }}
                   >
                     {nav.name}

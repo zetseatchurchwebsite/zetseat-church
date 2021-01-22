@@ -100,12 +100,12 @@ module.exports = {
       resolve: `gatsby-transformer-sharp`,
       options: {},
     },
-    {
-      resolve: `gatsby-plugin-webfonts`,
-      options: {
-        fonts: { google: [{ family: `Merriweather`, variants: [`300`] }] },
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-webfonts`,
+    //   options: {
+    //     fonts: { google: [{ family: `Merriweather`, variants: [`300`] }] },
+    //   },
+    // },
 
     //
     // COMPONENTS:
