@@ -73,7 +73,7 @@ export const navData: NavType[] = [
   {
     category: NavCategory.FOREIGN,
     name: <FormattedMessage id={'nav.give.name'} />,
-    url: `https://give.zetseat.church/`,
+    url: `https://www.gofundme.com/f/praise-and-offering-day`,
     description: <FormattedMessage id={'nav.give.description'} />,
     icon: <AiOutlineGift />,
   },

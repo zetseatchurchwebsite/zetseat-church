@@ -3,9 +3,7 @@ lead:
   bg: ../_uploads/38-2-.jpg
   btnText: Read More
   btnUrl: /blog
-  description: To see a generation suitable to God risen in the whole world.***Due
-    to the Coronavirus pandemic, We wont be conducting regular services
-    physically.***
+  description: To see a generation suitable to God risen in the whole world.
   isEnabled: true
   title: House of Worship
 about:
