@@ -108,7 +108,7 @@ const VideoSeries = ({ location, data }: VideoProps) => {
 
               <FlexSpacer />
 
-              <span className="margin-vertical-auto fg-blackish right">
+              <span className="margin-vertical-auto fg-black right">
                 <small className="inline-block middle margin-small margin-right-normal">
                   {lang`share`}:
                 </small>
@@ -177,13 +177,13 @@ const VideoSeries = ({ location, data }: VideoProps) => {
               ) : (
                 <>
                   <Block first>
-                    <h2 className="padding-top-none fg-blackish">
+                    <h2 className="padding-top-none fg-black">
                       {episode?.snippet.title}'
                       <div className="subtitle font-M">
                         {moment(new Date(episode?.snippet.publishedAt)).format(
                           'MMM D, YYYY'
                         )}
-                        <h6 className="inline-block padding-vertical-none padding-horizontal-normal fg-blackish">
+                        <h6 className="inline-block padding-vertical-none padding-horizontal-normal fg-black">
                           •
                         </h6>
                         <Anchor
@@ -215,7 +215,7 @@ const VideoSeries = ({ location, data }: VideoProps) => {
                       <Block>
                         <h6 className="padding-vertical-small right">
                           <button
-                            className="gerami-anchor fg-blackish"
+                            className="gerami-anchor fg-black"
                             style={{
                               padding: 0,
                               border: 0,
@@ -278,7 +278,7 @@ const VideoSeries = ({ location, data }: VideoProps) => {
                         title={e.snippet.title}
                       >
                         <Content
-                          className="fg-blackish"
+                          className="fg-black"
                           style={{ overflow: `hidden` }}
                         >
                           <GatsbyImage

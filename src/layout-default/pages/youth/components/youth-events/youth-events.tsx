@@ -18,13 +18,9 @@ const YouthEvents: React.FC<YouthEventsProps> = ({ events }) => {
   const lang = useLang()
   return (
     <div className="bg-whitish">
-      <Content
-        transparent
-        size="8XL"
-        className="margin-vertical-very-big padding-vertical-very-big"
-      >
+      <Content transparent size="8XL" className="padding-vertical-very-big">
         <Block first>
-          <h1 className="center fg-blackish">{lang`youth.event.title`}</h1>
+          <h1 className="center fg-black">{lang`youth.event.title`}</h1>
         </Block>
 
         <Block last>

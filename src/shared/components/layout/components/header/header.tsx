@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ transparentHeader }) => {
     >
       <div className="header-space">
         <Flex>
-          <Anchor to="/" className="margin-auto">
+          <Anchor to="/" className="margin-auto" style={{ paddingLeft: 20 }}>
             <Flex className="header-left padding-auto ">
               {lang`header-name-1` === 'Zetseat' ? (
                 <GatsbyImage

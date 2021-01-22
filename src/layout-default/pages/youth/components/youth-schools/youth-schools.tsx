@@ -2,18 +2,27 @@ import React from 'react'
 import { Block, Content, Yoga } from 'gerami'
 
 import Markdown from 'markdown-to-jsx'
-
+import { YouthbgQuery } from '../../../../../../graphql-types'
+import { graphql, useStaticQuery } from 'gatsby'
 type YouthSchoolsProps = {
   schools: { title: string; description: string }[]
 }
 
 const YouthSchools: React.FC<YouthSchoolsProps> = ({ schools }) => {
+  const data = useStaticQuery<YouthbgQuery>(query)
   return (
-    <div>
+    <div
+      style={{
+        backgroundSize: '960px auto',
+        backgroundPosition: 'bottom right',
+        backgroundRepeat: 'no-repeat',
+        backgroundImage: `url(${data.homebg?.childImageSharp?.fluid?.src})`,
+      }}
+    >
       <Content
         transparent
         size="4XL"
-        className="margin-vertical-very-big padding-vertical-very-big"
+        className="margin-top-very-big padding-vertical-very-big"
       >
         <Block first last>
           <Yoga maxCol={2} className="center">
@@ -81,3 +90,14 @@ const YouthSchools: React.FC<YouthSchoolsProps> = ({ schools }) => {
 }
 
 export default YouthSchools
+export const query = graphql`
+  query Youthbg {
+    homebg: file(relativePath: { eq: "images/shared/homebg.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920, quality: 90) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`

@@ -74,7 +74,7 @@ const Podcast: React.FC<PodcastProps> = ({ location, data }) => {
 
               <FlexSpacer />
 
-              <span className="margin-vertical-auto fg-blackish right">
+              <span className="margin-vertical-auto fg-black right">
                 <small className="inline-block middle margin-small margin-right-normal">
                   {lang`share`}:
                 </small>
@@ -158,7 +158,7 @@ const Podcast: React.FC<PodcastProps> = ({ location, data }) => {
                       download={true}
                       target="_blank"
                       rel="noopener nofollow"
-                      className="gerami-button uppercase fg-blackish bg-whitish"
+                      className="gerami-button uppercase fg-black bg-whitish"
                       style={{
                         margin: 0,
                         padding: `16px 24px`,
@@ -192,7 +192,7 @@ const Podcast: React.FC<PodcastProps> = ({ location, data }) => {
         {!tags?.length ? null : (
           <Content transparent size="4XL" className="padding-bottom-very-big">
             <Block first last>
-              <h3 className="padding-top-none fg-blackish">{lang`tags`}</h3>
+              <h3 className="padding-top-none fg-black">{lang`tags`}</h3>
               <hr />
               <div>
                 {tags.map((tag, i) => (
@@ -212,7 +212,7 @@ const Podcast: React.FC<PodcastProps> = ({ location, data }) => {
         {!similarPosts?.length ? null : (
           <Content transparent size="4XL" className="padding-bottom-very-big">
             <Block first last>
-              <h3 className="padding-top-none fg-blackish">Similar Posts</h3>
+              <h3 className="padding-top-none fg-black">Similar Posts</h3>
               <hr />
               <Yoga maxCol={3}>
                 {similarPosts.map((node, i) => {

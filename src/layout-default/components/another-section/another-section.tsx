@@ -75,7 +75,7 @@ const AnotherSection: React.FC<AnotherSectionProps> = ({
             {!title ? null : (
               <Block first last={!description && (!btnText || !btnUrl)}>
                 <h1
-                  className={`fg-blackish ${titleAlign || ''} ${
+                  className={`fg-black ${titleAlign || ''} ${
                     !!description ? 'padding-top-none' : ''
                   }`}
                 >

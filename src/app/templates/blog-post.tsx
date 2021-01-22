@@ -70,7 +70,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ location, data }) => {
 
               <FlexSpacer />
 
-              <span className="margin-vertical-auto fg-blackish right">
+              <span className="margin-vertical-auto fg-black right">
                 <small className="inline-block middle margin-small margin-right-normal">
                   {lang`share`}
                 </small>
@@ -150,7 +150,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ location, data }) => {
         {!tags?.length ? null : (
           <Content transparent size="4XL" className="padding-bottom-very-big">
             <Block first last>
-              <h3 className="padding-top-none fg-blackish">{lang`tags`}</h3>
+              <h3 className="padding-top-none fg-black">{lang`tags`}</h3>
               <hr />
               <div>
                 {tags.map((tag, i) => (
@@ -170,7 +170,7 @@ const BlogPost: React.FC<BlogPostProps> = ({ location, data }) => {
         {!similarPosts?.length ? null : (
           <Content transparent size="4XL" className="padding-bottom-very-big">
             <Block first last>
-              <h3 className="padding-top-none fg-blackish">{lang`similar-posts`}</h3>
+              <h3 className="padding-top-none fg-black">{lang`similar-posts`}</h3>
               <hr />
               <Yoga maxCol={3}>
                 {similarPosts.map((node, i) => {

@@ -10,7 +10,7 @@ const YouthMission = ({ description, title }: MISSION_PROPS) => {
     <Block last>
       <Content transparent size="XL" className="right">
         <Block first>
-          <h1 className="padding-top-normal fg-blackish">{title}</h1>
+          <h1 className="padding-top-normal fg-black">{title}</h1>
         </Block>
         <Block last className="font-L">
           {description}

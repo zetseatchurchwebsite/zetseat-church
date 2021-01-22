@@ -33,19 +33,19 @@ const HomeEvents: React.FC<HomeEventsProps> = ({ maxList }) => {
           className="padding-vertical-very-big center"
         >
           <Block first>
-            <h1 className="padding-top-none fg-blackish">{lang`home.events.title`}</h1>
+            <h1 className="padding-top-none fg-black">{lang`home.events.title`}</h1>
           </Block>
           <Block>
             <hr />
           </Block>
           <Block last>
             {!events.length ? (
-              <div className="fg-blackish">No featured events found.</div>
+              <div className="fg-black">No featured events found.</div>
             ) : (
               events.map(({ frontmatter, excerpt, fields }, i) => (
                 <Yoga key={i} maxCol={2}>
                   <div
-                    className="middle home-events-event-date fg-blackish bold"
+                    className="middle home-events-event-date fg-black bold"
                     style={{ textTransform: 'uppercase' }}
                   >
                     {moment(new Date(frontmatter?.happensOn!)).format(

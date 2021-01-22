@@ -45,7 +45,7 @@ const PodcastCard: React.FC<PodcastCardProps> = ({
         <h5 className="podcast-card-title">
           {title} <span className="subtitle font-M"> — {date}</span>
         </h5>
-        <div className="podcast-card-excerpt fg-blackish">{excerpt}</div>
+        <div className="podcast-card-excerpt fg-black">{excerpt}</div>
       </div>
     </Anchor>
   )

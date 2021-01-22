@@ -124,7 +124,7 @@ const HomeQuadLinksLink: React.FC<HomeQuadLinksLinkProps> = ({
             className="bg-whitish"
           />
           <h3>
-            <span className="inline-block fg-blackish">{title!}</span>
+            <span className="inline-block fg-black">{title!}</span>
             <span className="inline-block font-M padding-left-normal fg-primary">
               {!expandableText ? (
                 <MdLink />
@@ -136,7 +136,7 @@ const HomeQuadLinksLink: React.FC<HomeQuadLinksLinkProps> = ({
             </span>
           </h3>
           {!(!!expandableText && expanded) ? null : (
-            <Block last className="fg-blackish">
+            <Block last className="fg-black">
               <article className="font-S">
                 <Markdown>{expandableText!}</Markdown>
               </article>

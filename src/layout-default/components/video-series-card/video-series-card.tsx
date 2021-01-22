@@ -48,7 +48,7 @@ const VideoSeriesCard: React.FC<VideoCardProps> = ({
           {title}{' '}
           <span className="subtitle font-M"> — {numberOfEpisodes} Videos</span>
         </h5>
-        <div className="video-series-card-excerpt fg-blackish">{excerpt}</div>
+        <div className="video-series-card-excerpt fg-black">{excerpt}</div>
       </div>
     </Anchor>
   )

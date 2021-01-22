@@ -59,12 +59,12 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
           <Yoga maxCol={2}>
             <div className="middle">
               <Block first last={!(description || (btnText && btnUrl))}>
-                <h1 className="padding-top-none fg-blackish">{title}</h1>
+                <h1 className="padding-top-none fg-black">{title}</h1>
               </Block>
 
               <Block last={!(btnText && btnUrl)}>
                 <article
-                  className="left fg-blackish font-M"
+                  className="left fg-black font-M"
                   style={{ fontFamily: `inherit` }}
                 >
                   <Markdown>{description!}</Markdown>
@@ -88,7 +88,7 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
               <Block className="padding-vertical-none">
                 <Content className="shade-S">
                   <Block first last>
-                    <h5 className="padding-none fg-blackish">{lang`home.about.schedule.title`}</h5>
+                    <h5 className="padding-none fg-black">{lang`home.about.schedule.title`}</h5>
                   </Block>
 
                   {schedules.map((schedule, i) => (
@@ -107,10 +107,10 @@ const HomeAbout: React.FC<HomeAboutProps> = ({
                           <IoMdCalendar />
                         </div>
                         <div className="margin-auto" style={{ flex: 1 }}>
-                          <div className="font-XS padding-top-none uppercase fg-blackish">
+                          <div className="font-XS padding-top-none uppercase fg-black">
                             {schedule.time}
                           </div>
-                          <h6 className="font-M padding-top-none fg-blackish">
+                          <h6 className="font-M padding-top-none fg-black">
                             {schedule.name}
                           </h6>
                         </div>

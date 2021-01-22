@@ -66,7 +66,7 @@ const Event: React.FC<EventProps> = ({ location, data }) => {
 
               <FlexSpacer />
 
-              <span className="margin-vertical-auto fg-blackish right">
+              <span className="margin-vertical-auto fg-black right">
                 <small className="inline-block middle margin-small margin-right-normal">
                   {lang`share`}:
                 </small>
@@ -126,7 +126,7 @@ const Event: React.FC<EventProps> = ({ location, data }) => {
               <Block>
                 <Yoga maxCol={2}>
                   <div>
-                    <h6 className="middle padding-vertical-normal  fg-blackish">
+                    <h6 className="middle padding-vertical-normal  fg-black">
                       <small className="inline-block padding-right-normal">
                         <FaClock />
                       </small>
@@ -138,7 +138,7 @@ const Event: React.FC<EventProps> = ({ location, data }) => {
                   </div>
 
                   <div>
-                    <h6 className="middle padding-vertical-normal fg-blackish">
+                    <h6 className="middle padding-vertical-normal fg-black">
                       <small className="inline-block padding-right-normal">
                         <FaLocationArrow />
                       </small>

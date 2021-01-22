@@ -22,7 +22,7 @@ const AboutLeadership: React.FC<AboutLeadershipProps> = ({
       >
         {title && (
           <Block first last={!leaders} className="center">
-            <h1 className="fg-blackish">{title}</h1>
+            <h1 className="fg-black">{title}</h1>
           </Block>
         )}
 
@@ -42,7 +42,7 @@ const AboutLeadership: React.FC<AboutLeadershipProps> = ({
                       <div className="padding-bottom-small bold">
                         {leader?.name?.toUpperCase()}
                       </div>
-                      <div className="padding-top-small font-S fg-blackish">
+                      <div className="padding-top-small font-S fg-black">
                         {leader?.role?.toUpperCase()}
                       </div>
                     </div>

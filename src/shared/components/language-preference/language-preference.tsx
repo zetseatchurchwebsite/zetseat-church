@@ -57,11 +57,11 @@ const LanguagePreference = () => {
               : data.ethiopia.childImageSharp.fluid
           }
         />
-        <div className={'lang-code fg-blackish font-S'}>
+        <div className={'lang-code fg-black font-S'}>
           {language.toLocaleUpperCase() === 'AM' ? 'AM' : 'EN'}
         </div>
         <FontAwesomeIcon
-          className={'option-arrow fg-blackish'}
+          className={'option-arrow fg-black'}
           icon={faSortDown}
         />
       </div>
@@ -72,7 +72,7 @@ const LanguagePreference = () => {
           onClick={() => changeLanguage('am')}
         >
           <Flag data={data.ethiopia.childImageSharp.fluid} />
-          <span className={'lang-code fg-blackish font-S'}>AM</span>
+          <span className={'lang-code fg-black font-S'}>AM</span>
         </div>
         <div
           title={'English'}
@@ -80,7 +80,7 @@ const LanguagePreference = () => {
           onClick={() => changeLanguage('en')}
         >
           <Flag data={data.usa.childImageSharp.fluid} />
-          <span className={'lang-code fg-blackish font-S'}>EN</span>
+          <span className={'lang-code fg-black font-S'}>EN</span>
         </div>
       </div>
     </div>

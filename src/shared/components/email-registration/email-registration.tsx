@@ -35,7 +35,7 @@ const EmailRegistration: React.FC<EmailRegistrationProps> = () => {
         size="L"
         className="flex padding-vertical-very-big margin-bottom-very-big"
       >
-        <div className="margin-auto fg-blackish padding-horizontal-very-big hide-on-mobile">
+        <div className="margin-auto fg-black padding-horizontal-very-big hide-on-mobile">
           <FaRegBell style={{ fontSize: `7em`, opacity: 0.14 }} />
         </div>
 
@@ -45,7 +45,7 @@ const EmailRegistration: React.FC<EmailRegistrationProps> = () => {
             style={{ borderLeft: `solid rgba(0,0,0,0.028) 4px` }}
           >
             <Block className="padding-vertical-none">
-              <h1 className="padding-top-none fg-blackish">{lang`email.sub.title`}</h1>
+              <h1 className="padding-top-none fg-black">{lang`email.sub.title`}</h1>
               <div className="subtitle margin-bottom-very-big">
                 {lang`email.sub.description`}
               </div>

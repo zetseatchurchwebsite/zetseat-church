@@ -45,7 +45,7 @@ const BlogPostCard: React.FC<BlogPostCardProps> = ({
         <h5 className="blog-post-card-title">
           {title} <span className="subtitle font-M"> — {date}</span>
         </h5>
-        <div className="blog-post-card-excerpt fg-blackish">{excerpt}</div>
+        <div className="blog-post-card-excerpt fg-black">{excerpt}</div>
       </div>
     </Anchor>
   )

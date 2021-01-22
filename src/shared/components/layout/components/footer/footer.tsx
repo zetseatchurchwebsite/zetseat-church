@@ -43,7 +43,7 @@ const Footer: React.FC<FooterProps> = () => {
 
   const lang = useLang()
   return (
-    <footer className="footer bg-whitish fg-blackish">
+    <footer className="footer bg-whitish fg-black">
       <Content transparent size="4XL">
         <Block
           className="padding-vertical-none"
@@ -125,7 +125,7 @@ const Footer: React.FC<FooterProps> = () => {
                     <span key={i}>
                       <Anchor to={nav.url}>{nav.name}</Anchor>
                       {i >= navs.primaries.length - 1 ? null : (
-                        <h6 className="inline-block padding-vertical-none padding-horizontal-normal fg-blackish">
+                        <h6 className="inline-block padding-vertical-none padding-horizontal-normal fg-black">
                           •
                         </h6>
                       )}
@@ -146,7 +146,7 @@ const Footer: React.FC<FooterProps> = () => {
                         {nav.name}
                       </Anchor>
                       {i >= navs.foreigners.length - 1 ? null : (
-                        <h6 className="inline-block padding-vertical-none padding-horizontal-normal fg-blackish">
+                        <h6 className="inline-block padding-vertical-none padding-horizontal-normal fg-black">
                           •
                         </h6>
                       )}
@@ -161,7 +161,7 @@ const Footer: React.FC<FooterProps> = () => {
                     <span key={i}>
                       <Anchor to={nav.url}>{nav.name}</Anchor>
                       {i >= navs.secondaries.length - 1 ? null : (
-                        <h6 className="inline-block padding-vertical-none padding-horizontal-normal fg-blackish">
+                        <h6 className="inline-block padding-vertical-none padding-horizontal-normal fg-black">
                           •
                         </h6>
                       )}
@@ -180,7 +180,7 @@ const Footer: React.FC<FooterProps> = () => {
                 <Yoga maxCol={2}>
                   <div>
                     <div>
-                      <h5 className="padding-none font-S fg-blackish">
+                      <h5 className="padding-none font-S fg-black">
                         {lang`footer.address`}
                       </h5>
                       <div className="padding-top-small">
@@ -203,7 +203,7 @@ const Footer: React.FC<FooterProps> = () => {
                     </div>
 
                     <div className="padding-top-big">
-                      <h5 className="padding-none font-S fg-blackish">{lang`footer.mail`}</h5>
+                      <h5 className="padding-none font-S fg-black">{lang`footer.mail`}</h5>
                       <div className="padding-top-small">
                         <pre>{mail!}</pre>
                       </div>
@@ -212,7 +212,7 @@ const Footer: React.FC<FooterProps> = () => {
 
                   <div>
                     <div>
-                      <h5 className="padding-none font-S fg-blackish">
+                      <h5 className="padding-none font-S fg-black">
                         {phones!.length === 1
                           ? lang`footer.phone`
                           : lang`footer.phones`}
@@ -235,7 +235,7 @@ const Footer: React.FC<FooterProps> = () => {
                     </div>
 
                     <div className="padding-top-big">
-                      <h5 className="padding-none font-S fg-blackish">
+                      <h5 className="padding-none font-S fg-black">
                         {emails!.length === 1
                           ? lang`footer.email`
                           : lang`footer.emails`}
@@ -267,7 +267,7 @@ const Footer: React.FC<FooterProps> = () => {
 
         <Block last>
           {siteMetadata.copyright}
-          <h6 className="inline-block padding-vertical-none padding-horizontal-normal fg-blackish">
+          <h6 className="inline-block padding-vertical-none padding-horizontal-normal fg-black">
             •
           </h6>
           Powered by{' '}

@@ -34,7 +34,7 @@ const HomeForeignLinks: React.FC<HomeShopProps> = ({
                   <AiOutlineShoppingCart className="home-foreign-links-icon" />
                 </Block>
                 <Block>
-                  <h2 className="home-foreign-links-title fg-blackish">
+                  <h2 className="home-foreign-links-title fg-black">
                     {shopTitle!}
                   </h2>
                 </Block>
@@ -62,7 +62,7 @@ const HomeForeignLinks: React.FC<HomeShopProps> = ({
                   <IoMdTv className="home-foreign-links-icon" />
                 </Block>
                 <Block>
-                  <h2 className="home-foreign-links-title fg-blackish">
+                  <h2 className="home-foreign-links-title fg-black">
                     {liveTvTitle!}
                   </h2>
                 </Block>

@@ -30,10 +30,10 @@ const ClassCard = ({ classes }: ClassCardProps) => {
                   {c.classTitle}
                 </div>
                 <div className="margin-auto" style={{ flex: 1 }}>
-                  <h6 className="font-M padding-top-none fg-blackish">
+                  <h6 className="font-M padding-top-none fg-black">
                     {c.subject}
                   </h6>
-                  <div className="font-XS padding-top-none uppercase fg-blackish">
+                  <div className="font-XS padding-top-none uppercase fg-black">
                     {c.age}
                   </div>
                 </div>

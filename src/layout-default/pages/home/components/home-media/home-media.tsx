@@ -58,7 +58,7 @@ const HomeMedia: React.FC<HomeMediaProps> = ({
                   <Block first className="h0">
                     {icon}
                   </Block>
-                  <Block className="h2 fg-blackish">{title}</Block>
+                  <Block className="h2 fg-black">{title}</Block>
 
                   <Block first last>
                     <Anchor
