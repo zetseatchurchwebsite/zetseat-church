@@ -16,7 +16,7 @@ about:
   isEnabled: true
   title: Who We Are
 foreignLinks:
-  liveTvBtnUrl: https://live.zetseat.church/
+  liveTvBtnUrl: https://shop.zetseat.church/
   shopTitle: Give
   shopDescription: >-
     This is the season for us to rise up and run like never before! Preach the
@@ -26,19 +26,19 @@ foreignLinks:
 
 
     Commercial Bank: **1000217803776**  Berhan International Bank **1600050000776**
-  shopBtnUrl: https://give.zetseat.church/
-  liveTvTitle: "Live "
+  shopBtnUrl: https://www.gofundme.com/f/ZetseatOnlineGiving
+  liveTvTitle: Shop
   liveTvDescription: >-
     <!--StartFragment-->
 
 
-    Even if you can't attend services physically, thanks to technology, You can always be part of our online Community.
+    Check out our collection of clothing and accessories., We have something for you and your family.
 
 
     <!--EndFragment-->
   shopBtnText: Give Online
   isEnabled: false
-  liveTvBtnText: Join Live
+  liveTvBtnText: Shop Now
 quadLinks:
   bottomLeftCover: ../_uploads/photo_2020-06-01_16-30-45.jpg
   bottomLeftTitle: Worship
