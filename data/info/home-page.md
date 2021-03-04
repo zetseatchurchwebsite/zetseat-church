@@ -37,7 +37,7 @@ foreignLinks:
 
     <!--EndFragment-->
   shopBtnText: Give Online
-  isEnabled: true
+  isEnabled: false
   liveTvBtnText: Shop Now
 quadLinks:
   bottomLeftCover: ../_uploads/photo_2020-06-01_16-30-45.jpg
