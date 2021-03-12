@@ -26,7 +26,10 @@ const ClassCard = ({ classes }: ClassCardProps) => {
                 last={i >= classes.length - 1}
                 className="flex margin-top-big margin-top-small"
               >
-                <div className="margin-auto font-XL fg-primary padding-right-very-big padding-right-very-big">
+                <div
+                  style={{ width: '40%' }}
+                  className="margin-auto font-XL fg-primary padding-right-very-big padding-right-very-big"
+                >
                   {c.classTitle}
                 </div>
                 <div className="margin-auto" style={{ flex: 1 }}>
