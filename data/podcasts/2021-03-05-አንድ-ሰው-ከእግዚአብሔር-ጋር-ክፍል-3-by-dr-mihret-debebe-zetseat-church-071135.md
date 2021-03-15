@@ -8,5 +8,6 @@ authors:
   - Zetseat Church
 audio: ../_uploads/Dr Mihret 3.mp3
 tags:
-  - General
+  - Genera
+  - አንድ ሰው - በዶ/ር ምሀረት ደበበ
 ---
