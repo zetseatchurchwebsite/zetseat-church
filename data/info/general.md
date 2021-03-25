@@ -10,7 +10,7 @@ address: |-
   Sarbet, Next to Oromia Offices
   Addis Ababa, Ethiopia
 addressUrl: https://www.google.com/maps?q=Zetseat+Apostolic+Reformation+Church
-mail: P.O. Box 9315
+mail: P.O. Box 43284
 phones:
   - +251 1113690465
   - "+251113692046"

@@ -9,4 +9,5 @@ authors:
 audio: ../_uploads/Dr Mihret 4.mp3
 tags:
   - General
+  - አንድ ሰው - በዶ/ር ምሀረት ደበበ
 ---
