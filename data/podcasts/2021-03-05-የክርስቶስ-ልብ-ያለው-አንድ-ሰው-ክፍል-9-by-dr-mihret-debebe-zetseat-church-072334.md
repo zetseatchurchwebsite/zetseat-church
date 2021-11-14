@@ -6,7 +6,7 @@ title: የክርስቶስ ልብ ያለው አንድ ሰው (ክፍል 9) | By D
 date: 2021-03-05T07:22:43.422Z
 authors:
   - Zetseat Church
-fromRss: '{url:"",mp3:""}'
+fromRss: "{\"url\":\"\",\"mp3\":\"\"}"
 audio: ../_uploads/Dr Mihret 9.mp3
 tags:
   - General

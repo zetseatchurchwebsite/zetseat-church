@@ -6,7 +6,7 @@ title: ' አንድ ሰው በእግዚአብሔር እጅ (ክፍል 2) | - Dr. 
 date: 2021-03-05T07:08:48.400Z
 authors:
   - Zetseat Church
-fromRss: '{url:"",mp3:""}'
+fromRss: "{\"url\":\"\",\"mp3\":\"\"}"
 audio: ../_uploads/Dr Mihret 2.mp3
 tags:
   - General

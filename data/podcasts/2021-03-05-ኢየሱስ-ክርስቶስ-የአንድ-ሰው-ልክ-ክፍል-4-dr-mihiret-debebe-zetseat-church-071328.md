@@ -6,7 +6,7 @@ title: ኢየሱስ ክርስቶስ የአንድ ሰው ልክ (ክፍል 4) | -
 date: 2021-03-05T07:12:07.480Z
 authors:
   - Zetseat Church
-fromRss: '{url:"",mp3:""}'
+fromRss: "{\"url\":\"\",\"mp3\":\"\"}"
 audio: ../_uploads/Dr Mihret 4.mp3
 tags:
   - General
