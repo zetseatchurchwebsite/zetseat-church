@@ -47,9 +47,7 @@ const Podcast: React.FC<PodcastProps> = ({ location, data }) => {
   const _audio = podcast?.frontmatter?.audio!
   const audio =
     JSON.parse(podcast?.frontmatter?.fromRss || '{"url":"","mp3":""}').mp3 ||
-    (_audio
-      ? `https://kelalapp.com/sp?url=${siteMetadata.siteUrl}${_audio.publicURL}`
-      : '')
+    (_audio ? `${siteMetadata.siteUrl}${_audio.publicURL}` : '')
   const authors = podcast?.frontmatter?.authors!
   const tags = podcast?.frontmatter?.tags!
   const body = podcast?.html
