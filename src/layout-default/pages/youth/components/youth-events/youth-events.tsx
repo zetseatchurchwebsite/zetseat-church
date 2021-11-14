@@ -3,8 +3,6 @@ import { Block, Content, Yoga } from 'gerami'
 import Markdown from 'markdown-to-jsx'
 import useLang from '../../../../../shared/hooks/lang/use-lang'
 
-import Anchor from '../../../../../shared/components/anchor/anchor'
-
 type YouthEventsProps = {
   events: {
     title: string

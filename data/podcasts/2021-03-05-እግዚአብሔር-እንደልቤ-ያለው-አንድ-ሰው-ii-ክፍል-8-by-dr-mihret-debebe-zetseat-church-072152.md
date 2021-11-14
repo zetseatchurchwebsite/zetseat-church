@@ -6,6 +6,7 @@ title: እግዚአብሔር እንደልቤ ያለው አንድ ሰው (II) (�
 date: 2021-03-05T07:21:14.133Z
 authors:
   - Zetseat Church
+fromRss: '{url:"",mp3:""}'
 audio: ../_uploads/Dr Mihret 8.mp3
 tags:
   - General

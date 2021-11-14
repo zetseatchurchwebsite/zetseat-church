@@ -1,47 +1,67 @@
 import React from 'react'
-const { parse } = require('rss-to-json')
+import { parse } from 'rss-to-json'
 
 export class AnchorControl extends React.Component {
-  state = {
-    rssData: null,
-    abortController: null,
-  }
+  handleChange = (e) => {
+    const url = e.target.value
 
-  async handlechange(e) {
-    const rss = 'https://anchor.fm/s/690cdca8/podcast/rss'
-    await parse(rss).then((res) => {
-      this.state.rssData = res
-    })
+    this.props.onChange(JSON.stringify({ url, mp3: '' }))
 
-    this.state.rssData.items.map((data, key) => {
-      if (data.link === this.props.value) {
-        this.props.onChange(
-          JSON.stringify({
-            title: data.title,
-            description: data.description,
-            link: data.link,
-            author: data.author,
-            url: data.enclosures.url,
-          })
+    parse('https://anchor.fm/s/690cdca8/podcast/rss')
+      .then(({ items }) => {
+        const episode = items.find(
+          (item) =>
+            item.link === url &&
+            item.enclosures.length &&
+            item.enclosures[0].url
         )
-      }
-    })
-    if (this.state.abortController) this.state.abortController.abort()
-    const abortController = new AbortController()
-    this.setState({ abortController })
+        if (episode) {
+          this.props.onChange(
+            JSON.stringify({ url, mp3: episode.enclosures[0].url })
+          )
+        } else {
+          this.props.onChange(JSON.stringify({ url, mp3: '' }))
+        }
+      })
+      .catch((e) => {
+        console.error(e)
+        this.props.onChange(JSON.stringify({ url, mp3: '' }))
+      })
   }
+
   render() {
-    return <input value={value} onChange={this.handlechange} />
+    const value = JSON.parse(
+      this.props.value || JSON.stringify({ url: '', mp3: '' })
+    )
+
+    return (
+      <>
+        <input
+          id={this.props.forId}
+          className={this.props.classNameWrapper}
+          value={value.url}
+          onChange={this.handleChange}
+          type="url"
+        />
+
+        <AnchorPreview value={JSON.stringify(value)} />
+      </>
+    )
   }
 }
+
 export function AnchorPreview(props) {
-  const value = JSON.parse(props.value)
-  return !value ? null : (
-    <div>
-      <h3 style={{ margin: 0 }}>Zetseat Podcast Episode Anchor Link</h3>
-      <h5 style={{ opacity: 0.62, padding: 0, margin: '0 0 1rem 0' }}>
-        {value}
-      </h5>
+  const value = JSON.parse(props.value || JSON.stringify({ url: '', mp3: '' }))
+
+  return !value.mp3 ? (
+    <div style={{ padding: '1rem' }}>
+      Episode not found. Please update the Anchor.fm link.
+    </div>
+  ) : (
+    <div style={{ padding: '1rem' }}>
+      <audio controls src={value.mp3}>
+        Your browser does not support the <code>audio</code> element.
+      </audio>
     </div>
   )
 }

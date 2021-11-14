@@ -18,7 +18,7 @@ export class YouTubeControl extends React.Component {
 
     this.props.onChange(
       JSON.stringify({
-        id: id,
+        id,
         url: `https://youtu.be/${id}`,
         snippet: {},
         embed: `<iframe width="100%" height="420" src="https://www.youtube.com/embed/${id}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`,
@@ -54,12 +54,7 @@ export class YouTubeControl extends React.Component {
       })
       .catch((e) => {
         console.error(e)
-        this.props.onChange(
-          JSON.stringify({
-            ...value,
-            snippet: {},
-          })
-        )
+        this.props.onChange(JSON.stringify({ ...value, snippet: {} }))
       })
   }
 
@@ -81,6 +76,7 @@ export class YouTubeControl extends React.Component {
 
 export function YouTubePreview(props) {
   const value = JSON.parse(props.value || JSON.stringify({ snippet: {} }))
+
   return !value.snippet.title ? null : (
     <div>
       <h3 style={{ margin: 0 }}>{value.snippet.title}</h3>
@@ -88,7 +84,7 @@ export function YouTubePreview(props) {
         Published at {new Date(value.snippet.publishedAt).toLocaleString()}
       </h5>
       <div dangerouslySetInnerHTML={{ __html: value.embed }} />
-      <pre style={{ paddingTop: `1em`, opacity: 0.7 }}>
+      <pre style={{ paddingTop: `1rem`, opacity: 0.7 }}>
         {value.snippet.description}
       </pre>
     </div>

@@ -82,7 +82,17 @@ collections:
           widget: 'list',
           default: ['Zetseat Church'],
         }
-      - { label: 'Audio Attachment', name: 'audio', widget: 'file' }
+      - {
+          label: 'Anchor.fm Episode URL (Recommended)',
+          name: 'fromRss',
+          widget: 'anchor',
+        }
+      - {
+          label: 'Manual Audio Attachment (Deprecated)',
+          name: 'audio',
+          widget: 'file',
+          required: false,
+        }
       - {
           label: 'Tags (separate by comma)',
           name: 'tags',
@@ -95,6 +105,7 @@ collections:
           widget: 'markdown',
           required: false,
         }
+
   - name: 'videos'
     label: 'Videos'
     folder: 'data/videos'

@@ -6,6 +6,7 @@ title: አንድ ሰው - ለአንድ ሰው (ክፍል 12) | By Dr Mihret Debe
 date: 2021-04-05T15:31:21.341Z
 authors:
   - Zetseat Church
+fromRss: '{url:"",mp3:""}'
 audio: ../_uploads/Dr Mihret 12.mp3
 tags:
   - General

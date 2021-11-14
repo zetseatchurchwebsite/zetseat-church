@@ -45,7 +45,11 @@ const Podcast: React.FC<PodcastProps> = ({ location, data }) => {
   const title = podcast?.frontmatter?.title!
   const date = podcast?.frontmatter?.date!
   const _audio = podcast?.frontmatter?.audio!
-  const audio = `https://kelalapp.com/sp?url=${siteMetadata.siteUrl}${_audio.publicURL}`
+  const audio =
+    JSON.parse(podcast?.frontmatter?.fromRss || '{url:"",mp3:""}').mp3 ||
+    (_audio
+      ? `https://kelalapp.com/sp?url=${siteMetadata.siteUrl}${_audio.publicURL}`
+      : '')
   const authors = podcast?.frontmatter?.authors!
   const tags = podcast?.frontmatter?.tags!
   const body = podcast?.html
@@ -259,6 +263,7 @@ export const query = graphql`
         isFeatured
         title
         date(formatString: "MMMM DD, YYYY")
+        fromRss
         audio {
           publicURL
         }
