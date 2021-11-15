@@ -221,6 +221,7 @@ module.exports = {
                         }
                         title
                         date
+                        fromRss
                         audio {
                           publicURL
                           size
@@ -247,11 +248,9 @@ module.exports = {
                         _attr: {
                           length: edge.node.frontmatter.audio.size.toString(),
                           type: 'audio/mpeg',
-                          url:
-                            'https://kelalapp.com/sp?url=' +
-                            encodeURIComponent(
-                              siteUrl + edge.node.frontmatter.audio.publicURL
-                            ),
+                          url: edge.node.frontmatter.fromRss || encodeURIComponent(
+                            siteUrl + edge.node.frontmatter.audio?.publicURL || ''
+                          ),
                         },
                       },
                     },
@@ -279,11 +278,9 @@ module.exports = {
                       'media:content': {
                         _attr: {
                           type: 'audio/mpeg',
-                          url:
-                            'https://kelalapp.com/sp?url=' +
-                            encodeURIComponent(
-                              siteUrl + edge.node.frontmatter.audio.publicURL
-                            ),
+                          url:  edge.node.frontmatter.fromRss || encodeURIComponent(
+                            siteUrl + edge.node.frontmatter.audio?.publicURL || ''
+                          ),
                         },
                       },
                     },
