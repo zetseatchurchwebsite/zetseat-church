@@ -156,7 +156,7 @@ const Podcast: React.FC<PodcastProps> = ({ location, data }) => {
                     style={{ paddingTop: 16, paddingBottom: 16 }}
                   >
                     <Anchor
-                      to={_audio.publicURL!}
+                      to={audio!}
                       download={true}
                       target="_blank"
                       rel="noopener nofollow"
