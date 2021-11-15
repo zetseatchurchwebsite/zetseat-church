@@ -247,15 +247,17 @@ module.exports = {
                       enclosure: {
                         _attr: {
                           length:
-                            edge.node.frontmatter.audio?.size.toString() || '0',
+                            (edge.node.frontmatter.audio &&
+                              edge.node.frontmatter.audio.size.toString()) ||
+                            '0',
                           type: 'audio/mpeg',
                           url: encodeURIComponent(
                             JSON.parse(
                               edge.node.frontmatter.fromRss ||
                                 '{"url":"","mp3":""}'
                             ).mp3 ||
-                              siteUrl +
-                                edge.node.frontmatter.audio?.publicURL ||
+                              (siteUrl + edge.node.frontmatter.audio &&
+                                edge.node.frontmatter.audio.publicURL) ||
                               ''
                           ),
                         },
@@ -263,7 +265,9 @@ module.exports = {
                     },
                     {
                       'itunes:duration': Math.round(
-                        (edge.node.frontmatter.audio?.size || 0) / 320
+                        ((edge.node.frontmatter.audio &&
+                          edge.node.frontmatter.audio.size) ||
+                          0) / 320
                       ).toString(),
                     },
                     { 'itunes:explicit': 'false' },
@@ -290,8 +294,8 @@ module.exports = {
                               edge.node.frontmatter.fromRss ||
                                 '{"url":"","mp3":""}'
                             ).mp3 ||
-                              siteUrl +
-                                edge.node.frontmatter.audio?.publicURL ||
+                              (siteUrl + edge.node.frontmatter.audio &&
+                                edge.node.frontmatter.audio.publicURL) ||
                               ''
                           ),
                         },
