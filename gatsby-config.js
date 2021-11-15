@@ -246,17 +246,24 @@ module.exports = {
                     {
                       enclosure: {
                         _attr: {
-                          length: edge.node.frontmatter.audio.size.toString(),
+                          length:
+                            edge.node.frontmatter.audio?.size.toString() || '0',
                           type: 'audio/mpeg',
-                          url: edge.node.frontmatter.fromRss || encodeURIComponent(
-                            siteUrl + edge.node.frontmatter.audio?.publicURL || ''
+                          url: encodeURIComponent(
+                            JSON.parse(
+                              edge.node.frontmatter.fromRss ||
+                                '{"url":"","mp3":""}'
+                            ).mp3 ||
+                              siteUrl +
+                                edge.node.frontmatter.audio?.publicURL ||
+                              ''
                           ),
                         },
                       },
                     },
                     {
                       'itunes:duration': Math.round(
-                        edge.node.frontmatter.audio.size / 320
+                        (edge.node.frontmatter.audio?.size || 0) / 320
                       ).toString(),
                     },
                     { 'itunes:explicit': 'false' },
@@ -278,8 +285,14 @@ module.exports = {
                       'media:content': {
                         _attr: {
                           type: 'audio/mpeg',
-                          url:  edge.node.frontmatter.fromRss || encodeURIComponent(
-                            siteUrl + edge.node.frontmatter.audio?.publicURL || ''
+                          url: encodeURIComponent(
+                            JSON.parse(
+                              edge.node.frontmatter.fromRss ||
+                                '{"url":"","mp3":""}'
+                            ).mp3 ||
+                              siteUrl +
+                                edge.node.frontmatter.audio?.publicURL ||
+                              ''
                           ),
                         },
                       },
